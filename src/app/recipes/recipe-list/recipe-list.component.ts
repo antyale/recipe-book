@@ -9,13 +9,14 @@ export class RecipeListComponent implements OnInit {
 
   recipes: Recipe[] = [];
   @Output() recipeSelected = new EventEmitter<Recipe>();
-  recipe = new Recipe('Dummy', 'Dummy', 'http://www.quo.es/var/quo/storage/images/naturaleza/' +
-    'el-tomate-es-una-fruta-una-hortaliza-una-verdura/924689-1-esl-ES/el-tomate-es-una-fruta-una-hortaliza-una-verdura_ampliacion.jpg');
+  recipe = new Recipe('Fabada', 'Fabada', 'https://upload.wikimedia.org/wikipedia/commons/7/77/Fabada_en_cazuela_de_barro.jpg');
 
   constructor() {
+
   }
 
   ngOnInit() {
+
   }
 
   onSelected(recipe: Recipe) {
