@@ -8,18 +8,19 @@ import {Recipe} from '../recipe';
 export class RecipeListComponent implements OnInit {
 
   recipes: Recipe[] = [];
-  @Output() recipeSelected = new EventEmitter<Recipe>();
-  recipe = new Recipe('Fabada', 'Fabada', 'https://upload.wikimedia.org/wikipedia/commons/7/77/Fabada_en_cazuela_de_barro.jpg');
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
 
   constructor() {
 
   }
 
   ngOnInit() {
-
+    this.recipes.push(
+      new Recipe('Fabada', 'Fabada', 'https://upload.wikimedia.org/wikipedia/commons/7/77/Fabada_en_cazuela_de_barro.jpg'));
   }
 
-  onSelected(recipe: Recipe) {
-    this.recipeSelected.emit(recipe);
+  onRecipeSelected(recipeItem: Recipe) {
+    this.recipeWasSelected.emit(recipeItem);
   }
+
 }
